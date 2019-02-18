@@ -9,6 +9,7 @@ import Clock from './component/Clock'
 import Toggle from './component/Toggle'
 import LoginControl from './component/ConditionalRendering/LoginControl'
 import MailBox from './component/MailBox'
+import Page from './component/StopRender/Page'
 
 ReactDOM.render(<App />, document.getElementById('root'))
 
@@ -36,3 +37,5 @@ ReactDOM.render(
   <MailBox unreadMessages={messages} />,
   document.getElementById('mailBox')
 )
+
+ReactDOM.render(<Page />, document.getElementById('changlau'))
