@@ -7,6 +7,7 @@ import Welcome from './component/Welcome'
 import Home from './component/Comment/Home'
 import Clock from './component/Clock'
 import Toggle from './component/Toggle'
+import LoginControl from './component/ConditionalRendering/LoginControl'
 
 ReactDOM.render(<App />, document.getElementById('root'))
 
@@ -27,3 +28,4 @@ ReactDOM.render(element, document.getElementById('welcome'))
 ReactDOM.render(<Home />, document.getElementById('info'))
 ReactDOM.render(<Clock />, document.getElementById('clock'))
 ReactDOM.render(<Toggle />, document.getElementById('toggle'))
+ReactDOM.render(<LoginControl />, document.getElementById('loginControl'))
