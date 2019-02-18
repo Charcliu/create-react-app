@@ -8,6 +8,7 @@ import Home from './component/Comment/Home'
 import Clock from './component/Clock'
 import Toggle from './component/Toggle'
 import LoginControl from './component/ConditionalRendering/LoginControl'
+import MailBox from './component/MailBox'
 
 ReactDOM.render(<App />, document.getElementById('root'))
 
@@ -29,3 +30,9 @@ ReactDOM.render(<Home />, document.getElementById('info'))
 ReactDOM.render(<Clock />, document.getElementById('clock'))
 ReactDOM.render(<Toggle />, document.getElementById('toggle'))
 ReactDOM.render(<LoginControl />, document.getElementById('loginControl'))
+
+const messages = ['React', 'Re: React', 'Re:Re: React']
+ReactDOM.render(
+  <MailBox unreadMessages={messages} />,
+  document.getElementById('mailBox')
+)
