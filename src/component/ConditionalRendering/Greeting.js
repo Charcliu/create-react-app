@@ -9,10 +9,9 @@ class Greeting extends Component {
   }
 
   render() {
-    if (this.props.isLoggedIn) {
-      return <UserGreeting />
-    }
-    return <GuestGreeting />
+    return (
+      <div>{this.props.isLoggedIn ? <UserGreeting /> : <GuestGreeting />}</div>
+    )
   }
 }
 

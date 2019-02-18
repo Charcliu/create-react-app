@@ -18,17 +18,14 @@ class LoginControl extends Component {
   }
 
   render() {
-    const isLoggedIn = this.state.isLoggedIn
-    let button = null
-    if (isLoggedIn) {
-      button = <LogoutButton onClick={this.handleLogoutClick} />
-    } else {
-      button = <LoginButton onClick={this.handleLoginClick} />
-    }
     return (
       <div>
-        <Greeting isLoggedIn={isLoggedIn} />
-        {button}
+        <Greeting isLoggedIn={this.state.isLoggedIn} />
+        {this.state.isLoggedIn ? (
+          <LogoutButton onClick={this.handleLogoutClick} />
+        ) : (
+          <LoginButton onClick={this.handleLoginClick} />
+        )}
       </div>
     )
   }
