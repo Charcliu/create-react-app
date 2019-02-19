@@ -3,6 +3,10 @@ import FancyBorder from './FancyBorder'
 import Dialog from './Dialog'
 import './Assembly.css'
 
+/**
+ * React组合
+ * 类似于Vue中的<slot></slot>
+ */
 class WelcomeDialog extends Component {
   constructor(props) {
     super(props)
