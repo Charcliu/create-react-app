@@ -11,6 +11,7 @@ import LoginControl from './component/ConditionalRendering/LoginControl'
 import MailBox from './component/MailBox'
 import Page from './component/StopRender/Page'
 import ListHome from './component/List/ListHome'
+import NameForm from './component/Form/NameForm'
 
 ReactDOM.render(<App />, document.getElementById('root'))
 
@@ -41,3 +42,4 @@ ReactDOM.render(
 
 ReactDOM.render(<Page />, document.getElementById('changlau'))
 ReactDOM.render(<ListHome />, document.getElementById('numberList'))
+ReactDOM.render(<NameForm />, document.getElementById('form'))
