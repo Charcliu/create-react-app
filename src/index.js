@@ -14,6 +14,7 @@ import ListHome from './component/List/ListHome'
 import NameForm from './component/Form/NameForm'
 import Calculator from './component/StateUp/Calculator'
 import WelcomeDialog from './component/Assembly/WelcomeDialog'
+import Main from './component/Practise/Main'
 
 ReactDOM.render(<App />, document.getElementById('root'))
 
@@ -47,3 +48,4 @@ ReactDOM.render(<ListHome />, document.getElementById('numberList'))
 ReactDOM.render(<NameForm />, document.getElementById('form'))
 ReactDOM.render(<Calculator />, document.getElementById('stateUp'))
 ReactDOM.render(<WelcomeDialog />, document.getElementById('assembly'))
+ReactDOM.render(<Main />, document.getElementById('practise'))
