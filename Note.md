@@ -71,7 +71,6 @@ class ShoppingList extends React.Component {
 - 只有通过 class 创建的组件才具有状态
 - 状态是私有的，完全由组件来控制
 - 不要在 state 中添加 render() 方法中不需要的数据，会影响渲染性能！
-
 - 可以将组件内部使用但是不渲染在视图中的内容，直接添加给 this
 - 不要在 render() 方法中调用 setState() 方法来修改 state 的值,但是可以通过 this.state.name = 'rose' 方式设置 state（不推荐!!!!）
 
@@ -92,6 +91,54 @@ class Hello extends React.Component {
       <div>性别：{ this.state.gender }</div>
     )
   }
+}
+```
+
+### setState
+
+- 使用 setState() 方法修改状态，状态改变后，React 会重新渲染组件
+- 不要直接修改 state 属性的值，这样不会重新渲染组件！！！
+
+```
+// 错误姿势！！！
+this.state.test = '这样方式，不会重新渲染组件';
+
+constructor(props) {
+  super(props)
+
+  // 正确姿势！！！
+  // -------------- 初始化 state --------------
+  this.state = {
+    count: props.initCount
+  }
+}
+
+componentWillMount() {
+  // -------------- 修改 state 的值 --------------
+  // 方式一：
+  this.setState({
+    count: this.state.count + 1
+  })
+
+  this.setState({
+    count: this.state.count + 1
+  }, function(){
+    // 由于 setState() 是异步操作，所以，如果想立即获取修改后的state
+    // 需要在回调函数中获取
+    // https://doc.react-china.org/docs/react-component.html#setstate
+  });
+
+  // 方式二：
+  this.setState(function(prevState, props) {
+    return {
+      counter: prevState.counter + props.increment
+    }
+  })
+
+  // 或者 - 注意： => 后面需要带有小括号，因为返回的是一个对象
+  this.setState((prevState, props) => ({
+    counter: prevState.counter + props.increment
+  }))
 }
 ```
 
@@ -167,3 +214,8 @@ import '../css/comment.css'
 - - componentWillUnmount()
 - - - 只要组件不再被渲染到页面中，那么这个方法就会被调用
 - - - 在卸载组件的时候，执行清理工作，比如清除定时器,清除 componentDidMount 创建的 DOM 对象
+
+### 绑定事件
+
+- 通过 React 事件机制 onClick 绑定
+- JS 原生方式绑定（通过 ref 获取元素）
