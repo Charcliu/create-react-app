@@ -9,6 +9,7 @@ class Clock extends Component {
   }
 
   componentDidMount() {
+    console.log(this.props)
     this.timerID = setInterval(() => {
       this.tick()
     }, 1000)
@@ -27,12 +28,15 @@ class Clock extends Component {
 
   showTime(e) {
     alert(this.state.date.toLocaleTimeString())
+    // 返回上一级
+    this.props.history.go(-1)
   }
 
   render() {
     return (
       <div onClick={this.showTime}>
         Time is {this.state.date.toLocaleTimeString()}
+        <h1>{this.props.match.params.timeId}</h1>
       </div>
     )
   }

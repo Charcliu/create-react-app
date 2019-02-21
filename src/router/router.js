@@ -6,6 +6,9 @@ import Home from '../component/Comment/Home'
 import Clock from '../component/Clock'
 import Toggle from '../component/Toggle'
 import LifeCycleHome from '../component/LifeCycle/LifeCycleHome'
+import Parent from '../component/Communicate/One/Parent'
+import Parent2 from '../component/Communicate/Two/Parent'
+
 // import LoginControl from './component/ConditionalRendering/LoginControl'
 // import MailBox from './component/MailBox'
 // import Page from './component/StopRender/Page'
@@ -25,9 +28,11 @@ class RouterDom extends Component {
           <Route path="/" component={App} />
           <Route path="/welcome" component={Welcome} />
           <Route path="/home" component={Home} />
-          <Route path="/clock" component={Clock} />
+          <Route path="/clock/:timeId" component={Clock} />
           <Route path="/toggle" component={Toggle} />
           <Route path="/lifeCycle" component={LifeCycleHome} />
+          <Route path="/parent" component={Parent} />
+          <Route path="/parent2" component={Parent2} />
           {/* <Redirect path="/" to={{ pathname: '/xxx' }} /> */}
           {/* </Switch> */}
         </div>

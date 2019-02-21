@@ -13,6 +13,8 @@ class Welcome extends Component {
 
   handleClick = event => {
     console.log(event)
+    // 路由跳转
+    this.props.history.push('/clock/' + 123)
   }
 
   focusTextInput = param => {
@@ -20,6 +22,12 @@ class Welcome extends Component {
     // 注意：通过 "current" 取得 DOM 节点
     this.textInput.current.focus()
     this.textInput.current.value = param
+  }
+
+  handleChange = event => {
+    this.setState({
+      name: event.target.value
+    })
   }
 
   render() {
@@ -34,6 +42,12 @@ class Welcome extends Component {
           onClick={() => {
             this.focusTextInput(this.state.name)
           }}
+        />
+        <br />
+        <input
+          type="text"
+          value={this.state.name}
+          onChange={this.handleChange}
         />
       </div>
     )
