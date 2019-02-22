@@ -26,7 +26,7 @@ class RouterDom extends Component {
           {/* <Switch> */}
 
           <Route path="/" component={App} />
-          <Route path="/welcome" component={Welcome} />
+          <Route strict path="/welcome" component={Welcome} />
           <Route path="/home" component={Home} />
           <Route path="/clock/:timeId" component={Clock} />
           <Route path="/toggle" component={Toggle} />

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { Link ,NavLink} from 'react-router-dom'
+import { Route, Link, NavLink } from 'react-router-dom'
+import Welcome from './component/Welcome'
 import './App.css'
 
 class App extends Component {
@@ -17,7 +18,7 @@ class App extends Component {
             <Link to="/clock">Clock</Link>
           </li>
         </ul>
-        {this.props.children}
+        <Route strict path="/welcome" component={Welcome} />
       </div>
     )
   }
