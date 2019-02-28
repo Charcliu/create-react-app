@@ -8,6 +8,7 @@ import Toggle from '../component/Toggle'
 import LifeCycleHome from '../component/LifeCycle/LifeCycleHome'
 import Parent from '../component/Communicate/One/Parent'
 import Parent2 from '../component/Communicate/Two/Parent'
+import RefHome from '../component/Refs/RefHome'
 
 // import LoginControl from './component/ConditionalRendering/LoginControl'
 // import MailBox from './component/MailBox'
@@ -33,6 +34,7 @@ class RouterDom extends Component {
           <Route path="/lifeCycle" component={LifeCycleHome} />
           <Route path="/parent" component={Parent} />
           <Route path="/parent2" component={Parent2} />
+          <Route path="/refhome" component={RefHome} />
           {/* <Redirect path="/" to={{ pathname: '/xxx' }} /> */}
           {/* </Switch> */}
         </div>
