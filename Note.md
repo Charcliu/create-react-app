@@ -225,3 +225,29 @@ import '../css/comment.css'
 - 数据流动方向：自上而下，也就是只能由父组件传递到子组件
 - 数据都是由父组件提供的，子组件想要使用数据，都是从父组件中获取的
 - 如果多个组件都要使用某个数据，最好将这部分共享的状态提升至他们最近的父组件当中进行管理
+
+### 受控组件
+
+> 受控组件中，表单数据由 React 组件处理
+
+### 非受控组件
+
+> 表单数据由 DOM 处理
+
+### React渲染
+
+> 通过差分算法，找到需要更新的DOM对象，更新UI渲染新树
+
+### Context
+
+> Context 通过组件树提供了一个传递数据的方法，从而避免了在每一个层级手动的传递 props 属性。
+
+- Provider
+- - React 组件允许 Consumers 订阅 context 的改变。
+- - 接收一个 value 属性传递给 Provider 的后代 Consumers。
+- - 一个 Provider 可以联系到多个 Consumers。Providers 可以被嵌套以覆盖组件树内更深层次的值。
+
+- Consumer
+- - 一个可以订阅 context 变化的 React 组件。
+- - 接收一个函数作为子节点. 函数接收当前 context 的值并返回一个 React 节点。
+- - 传递给函数的 value 将等于组件树中上层 context 的最近的 Provider 的 value 属性。
