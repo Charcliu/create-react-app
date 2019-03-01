@@ -4,7 +4,9 @@ import RefChild from './RefChild'
 class RefHome extends Component {
   constructor(props) {
     super(props)
-    this.state = {}
+    this.state = {
+      textValue: ''
+    }
     this.textInput = React.createRef()
   }
 
@@ -13,9 +15,42 @@ class RefHome extends Component {
     this.textInput.current.focusTextInput()
   }
 
+  innerRef = event => {
+    alert(
+      'A name was submitted: ' +
+        this.input.value +
+        ' ' +
+        this.fileInput.value +
+        ' ' +
+        this.state.textValue
+    )
+    event.preventDefault()
+  }
+
+  handleChange = event => {
+    this.setState({
+      textValue: event.target.value
+    })
+  }
+
   render() {
     return (
       <div>
+        <label>非受控组件：</label>
+        <input type="text" ref={input => (this.input = input)} />
+        <input
+          type="file"
+          ref={input => {
+            this.fileInput = input
+          }}
+        />
+        <label>受控组件：</label>
+        <input
+          type="text"
+          value={this.state.textValue}
+          onChange={this.handleChange}
+        />
+        <input type="button" value="Click Me!" onClick={this.innerRef} />
         <RefChild ref={this.textInput} />
       </div>
     )
