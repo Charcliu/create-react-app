@@ -1,25 +1,33 @@
 import React, { Component } from 'react'
-import { Route, Link, NavLink } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import Welcome from './component/Welcome'
+import Toggle from './component/Toggle'
+import Clock from './component/Clock'
 import './App.css'
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <ul>
-          <li>
-            <NavLink to="/welcome">Welcome</NavLink>
-          </li>
-          <li>
-            <Link to="/home">Home</Link>
-          </li>
-          <li>
-            <Link to="/clock">Clock</Link>
-          </li>
-        </ul>
-        <Route strict path="/welcome" component={Welcome} />
-      </div>
+      <Router>
+        <div>
+          <nav>
+            <ul>
+              <li>
+                <Link to="/welcome">Welcome</Link>
+              </li>
+              <li>
+                <Link to="/toggle">Toggle</Link>
+              </li>
+              <li>
+                <Link to="/clock/123">Clock</Link>
+              </li>
+            </ul>
+          </nav>
+          <Route path="/welcome" component={Welcome} />
+          <Route path="/toggle" component={Toggle} />
+          <Route path="/clock/:timeId" component={Clock} />
+        </div>
+      </Router>
     )
   }
 }
