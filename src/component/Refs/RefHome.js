@@ -37,6 +37,7 @@ class RefHome extends Component {
     return (
       <div>
         <label>非受控组件：</label>
+        {/* 表单组件由DOM处理 */}
         <input type="text" ref={input => (this.input = input)} />
         <input
           type="file"
@@ -45,6 +46,7 @@ class RefHome extends Component {
           }}
         />
         <label>受控组件：</label>
+        {/* 表单数据由React处理 */}
         <input
           type="text"
           value={this.state.textValue}
