@@ -234,9 +234,9 @@ import '../css/comment.css'
 
 > 表单数据由 DOM 处理
 
-### React渲染
+### React 渲染
 
-> 通过差分算法，找到需要更新的DOM对象，更新UI渲染新树
+> 通过差分算法，找到需要更新的 DOM 对象，更新 UI 渲染新树
 
 ### Context
 
@@ -251,3 +251,24 @@ import '../css/comment.css'
 - - 一个可以订阅 context 变化的 React 组件。
 - - 接收一个函数作为子节点. 函数接收当前 context 的值并返回一个 React 节点。
 - - 传递给函数的 value 将等于组件树中上层 context 的最近的 Provider 的 value 属性。
+
+### Fragments
+
+> React 中一个常见模式是为一个组件返回多个元素。Fragments 可以让你聚合一个子元素列表，并且不在 DOM 中增加额外节点。
+
+```
+render() {
+  return (
+    <>
+      <ChildA />
+      <ChildB />
+      <ChildC />
+    </>
+  );
+}
+```
+
+### Portals
+
+> Portals 提供了一种很好的将子节点渲染到父组件以外的 DOM 节点的方式。
+

@@ -31,7 +31,7 @@ class Toggle extends Component {
 
   render() {
     return (
-      <div>
+      <>
         <div onClick={this.handleClick}>
           {this.state.isToggleOn ? 'ON' : 'OFF'}
           <button onClick={e => this.clickMe('ChangLau', e)}>Click Me!</button>
@@ -49,8 +49,7 @@ class Toggle extends Component {
             Content of Tab Pane 3
           </TabPane>
         </Tabs>
-        ,
-      </div>
+      </>
     )
   }
 }
