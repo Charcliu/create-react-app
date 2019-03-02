@@ -272,3 +272,29 @@ render() {
 
 > Portals 提供了一种很好的将子节点渲染到父组件以外的 DOM 节点的方式。
 
+### Error Boundaries
+
+> 错误边界是用于捕获其子组件树 JavaScript 异常，记录错误并展示一个回退的 UI 的 React 组件，而不是整个组件树的异常。错误边界在渲染期间、生命周期方法内、以及整个组件树构造函数内捕获错误。
+
+**错误边界仅可以捕获组件在树中比他低的组件的错误**
+
+> 错误边界无法捕获事件处理器内部的错误。
+
+- 如果你需要在事件处理器内部捕获错误，使用普通的 JavaScript try / catch 语句：
+
+```
+handleClick() {
+    try {
+      // Do something that could throw
+    } catch (error) {
+      this.setState({ error });
+    }
+}
+
+render() {
+  if (this.state.error) {
+    return <h1>Caught an error.</h1>
+  }
+  return <div onClick={this.handleClick}>Click Me</div>
+}
+```

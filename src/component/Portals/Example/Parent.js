@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Modal from './Modal'
 import Child from './Child'
+import ErrorBoundary from './ErrorBoundary'
 
 // 通过 Portals 进行事件冒泡
 
@@ -29,10 +30,13 @@ class Parent extends Component {
             Open up the browser DevTools to observe that the button is not a
             child of the div with the onClick handler.
           </p>
-          <Modal>
-            <h1>Hello, Protals</h1>
-            <Child />
-          </Modal>
+          {/* 错误边界 */}
+          <ErrorBoundary>
+            <Modal>
+              <h1>Hello, Protals</h1>
+              <Child />
+            </Modal>
+          </ErrorBoundary>
         </div>
       </>
     )
