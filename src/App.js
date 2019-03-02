@@ -28,6 +28,9 @@ class App extends Component {
               <li>
                 <Link to="/fragment">Fragment</Link>
               </li>
+              <li>
+                <Link to="/protals">Protals</Link>
+              </li>
             </ul>
           </nav>
           <Route path="/welcome" component={Welcome} />
