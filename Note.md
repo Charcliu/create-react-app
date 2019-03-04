@@ -298,3 +298,20 @@ render() {
   return <div onClick={this.handleClick}>Click Me</div>
 }
 ```
+
+### 高阶组件
+
+[参考链接 1](https://www.jianshu.com/p/0aae7d4d9bc1)
+[参考链接 2](https://segmentfault.com/a/1190000010371752#articleHeader4)
+
+> 高阶组件通过包裹（wrapped）被传入的 React 组件，经过一系列处理，最终返回一个相对增强（enhanced）的 React 组件，供其他组件调用。
+
+- 属性代理
+- - 更改 props
+- - 通过 refs 获取组件实例
+- - 抽象 state
+- - 把 WrappedComponent 与其它 elements 包装在一起
+
+- 反向继承
+- - 渲染劫持（Render Highjacking）
+- - 操作 state
