@@ -6,6 +6,7 @@ import Clock from './component/Clock'
 import Fragment from './component/Fragment'
 import PortalsHome from './component/Portals/PortalsHome'
 import Parent from './component/Portals/Example/Parent'
+import Demo from './component/Advance/Demo'
 
 import './App.css'
 
@@ -39,6 +40,7 @@ class App extends Component {
           <Route path="/fragment" component={Fragment} />
           <Route path="/protals" component={PortalsHome} />
           <Route path="/protals" component={Parent} />
+          <Route path="/demo" component={Demo} />
         </div>
       </Router>
     )
