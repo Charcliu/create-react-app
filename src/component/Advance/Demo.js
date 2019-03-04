@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import withHeader from './WithHeader'
+import WithHeader from './WithHeader'
 
-@withHeader
+@WithHeader
 class Demo extends Component {
   render() {
     return <div>我是一个普通组件</div>
