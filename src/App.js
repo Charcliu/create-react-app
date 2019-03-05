@@ -9,6 +9,7 @@ import Parent from './component/Portals/Example/Parent'
 import Demo from './component/Advance/PropsProxy/Demo'
 import test from './component/Advance/Inheritance/test'
 import MouseTracker from './component/RenderProp/MouseTracker'
+import Home from './component/Nested/Home'
 
 import './App.css'
 
@@ -45,6 +46,7 @@ class App extends Component {
           <Route path="/demo" component={Demo} />
           <Route path="/demo" component={test} />
           <Route path="/mouse" component={MouseTracker} />
+          <Route path="/home" component={Home} />
         </div>
       </Router>
     )
