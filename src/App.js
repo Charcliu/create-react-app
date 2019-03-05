@@ -1,5 +1,12 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Redirect,
+  Switch,
+  NavLink
+} from 'react-router-dom'
 import Welcome from './component/Welcome'
 import Toggle from './component/Toggle'
 import Clock from './component/Clock'
@@ -33,20 +40,33 @@ class App extends Component {
                 <Link to="/fragment">Fragment</Link>
               </li>
               <li>
-                <Link to="/protals">Protals</Link>
+                {/* active */}
+                <NavLink
+                  to="/protals"
+                  activeStyle={{
+                    fontWeight: 'bold',
+                    color: 'red'
+                  }}
+                >
+                  Protals
+                </NavLink>
               </li>
             </ul>
           </nav>
-          <Route path="/welcome" component={Welcome} />
-          <Route path="/toggle" component={Toggle} />
-          <Route path="/clock/:timeId" component={Clock} />
-          <Route path="/fragment" component={Fragment} />
-          <Route path="/protals" component={PortalsHome} />
-          <Route path="/protals" component={Parent} />
-          <Route path="/demo" component={Demo} />
-          <Route path="/demo" component={test} />
-          <Route path="/mouse" component={MouseTracker} />
-          <Route path="/home" component={Home} />
+          <Switch>
+            <Route path="/welcome" component={Welcome} />
+            {/* <Route path="/toggle" component={Toggle} /> */}
+            <Route path="/toggle" render={props => <Toggle {...props} />} />
+            <Route path="/clock/:timeId" component={Clock} />
+            <Route path="/fragment" component={Fragment} />
+            <Route path="/protals" component={PortalsHome} />
+            <Route path="/protals" component={Parent} />
+            <Route path="/demo" component={Demo} />
+            <Route path="/demo" component={test} />
+            <Route path="/mouse" component={MouseTracker} />
+            <Route path="/home" component={Home} />
+            <Redirect to="/home" />
+          </Switch>
         </div>
       </Router>
     )
