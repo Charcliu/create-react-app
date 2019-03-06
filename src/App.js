@@ -61,10 +61,11 @@ class App extends Component {
             <Route path="/fragment" component={Fragment} />
             <Route path="/protals" component={PortalsHome} />
             <Route path="/protals" component={Parent} />
+            <Route path="/demo/test" component={test} />
             <Route path="/demo" component={Demo} />
-            <Route path="/demo" component={test} />
             <Route path="/mouse" component={MouseTracker} />
             <Route path="/home" component={Home} />
+            {/* 在其他路由不匹配的情况下，才会渲染重定向组件 */}
             <Redirect to="/home" />
           </Switch>
         </div>
